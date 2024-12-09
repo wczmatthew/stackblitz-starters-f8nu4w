@@ -7,7 +7,7 @@ const childRef = useTemplateRef('childRef')
 onMounted(() => {
   // childRef.value 将持有 <Child /> 的实例
   console.log("Parent get the child = ");
-  console.log(childRef.value);
+  console.log(childRef.value.a.value);
 })
 </script>
 

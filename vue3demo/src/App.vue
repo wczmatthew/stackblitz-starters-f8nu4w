@@ -16,6 +16,9 @@ import TemplateRef from './components/TemplateRef.vue';
 import TemplateVFor from './components/TemplateVFor.vue';
 import TemplateFunc from './components/TemplateFunc.vue';
 import TemplatePrt from './components/TemplatePrt.vue';
+import CompPrt1 from './components/ComponentDemo/CompPrt1.vue';
+import CompPrt2 from './components/ComponentDemo/CompPrt2.vue';
+
 const routes = {
   '/': HelloWorld1,
   '/hello': HelloWorld,
@@ -31,6 +34,8 @@ const routes = {
   '/templateVFor': TemplateVFor,
   '/templateFunc': TemplateFunc,
   '/templatePrt': TemplatePrt,
+  '/compPrt1': CompPrt1,
+  '/compPrt2': CompPrt2,
 };
 const currentPath = ref(window.location.hash);
 window.addEventListener('hashchange', () => {
@@ -44,18 +49,26 @@ const p2c = ref('papa to child');
 const p2c1 = ref('papa to child1');
 </script>
 <template>
-  <a href="#/">Home</a> | <a href="#/hello">hello</a> |
-  <a href="#/compute">compute</a> | <a href="#/watch">Watch</a> |
-  <a href="#/watchCompute">WatchCompute</a> |
-  <a href="#/watchCompute1">WatchCompute1</a> |
-  <a href="#/watchGetter">WatchGetter</a> |
-  <a href="#/watchMultiArray">WatchMultiArray</a> |
-  <a href="#/watchReactive">WatchReactive</a> |
-  <a href="#/watchPost">WatchPost</a> |
-  <a href="#/templateRef">TemplateRef</a> |
-  <a href="#/templateVFor">TemplateVFor</a> |
-  <a href="#/templateFunc">TemplateFunc</a> |
-  <a href="#/templatePrt">TemplatePrt</a> |
+  <div style="display: flex; justify-items: center; text-align: center;">
+    <a href="#/">Home</a> | <a href="#/hello">hello</a> |
+    <a href="#/compute">compute</a> | <a href="#/watch">Watch</a> |
+    <a href="#/watchCompute">WatchCompute</a> |
+    <a href="#/watchCompute1">WatchCompute1</a> |
+    <a href="#/watchGetter">WatchGetter</a> |
+    <a href="#/watchMultiArray">WatchMultiArray</a> |
+    <a href="#/watchReactive">WatchReactive</a> |
+    <a href="#/watchPost">WatchPost</a> |
+    <a href="#/templateRef">TemplateRef</a> |
+    <a href="#/templateVFor">TemplateVFor</a> |
+    <a href="#/templateFunc">TemplateFunc</a> |
+    <a href="#/templatePrt">TemplatePrt</a> |
+  </div>
+  <hr />
+  <div style="display: flex; justify-items: center; text-align: center;">
+    <h2>Components Demo</h2><br />
+    <a href="#/compPrt1">CompPrt1</a> |
+    <a href="#/compPrt2">CompPrt2</a> |
+  </div>
   <a href="#/non-existent-path">Broken Link</a>
   <!-- <component :is="currentView" :msg="p2c" :msg1="p2c1" /> -->
   <component :is="currentView" />
